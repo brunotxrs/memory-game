@@ -21,3 +21,49 @@ body {
     );
     padding: 2.5rem 3.75rem;
 }
+
+h2 {
+    font-size: 3em;
+    color: #ffff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.reset {
+    padding: .94rem 1.25rem;
+    width: 100%;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.reset:focus{
+    color: #ec38bc;
+    background-color: #262809;
+}
+
+.game {
+    width: 28.88rem;
+    height: 28.88rem;
+    border: 1px solid red;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .63rem;
+    transform-style: preserve-3d;
+    perspective: 31.25rem;
+}
+
+.item {
+    position: relative;
+    width: 6.25rem;
+    height: 6.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
