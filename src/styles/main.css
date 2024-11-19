@@ -3,7 +3,10 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.95), rgba(49, 169, 221, 0.772), rgba(0, 0, 0, 0.954)), url("../img.svg");
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.95), 
+        rgba(49, 169, 221, 0.772), 
+        rgba(0, 0, 0, 0.954)), url("../img.svg");
     user-select: none;
     overflow: hidden; /* Impede a rolagem da tela */
 }
@@ -19,7 +22,11 @@ body {
     align-items: center;
     gap: 1.88rem;
     background: rgb(59,55,121);
-    background: linear-gradient(319deg, rgba(59,55,121,1) 0%, rgba(41,115,154,1) 35%, rgba(41,82,154,1) 56%, rgba(41,52,154,1) 67%);
+    background: linear-gradient(319deg, 
+    rgba(59,55,121,1) 0%, 
+    rgba(41,115,154,1) 35%, 
+    rgba(41,82,154,1) 56%, 
+    rgba(41,52,154,1) 67%);
     padding: .70rem 3.75rem;
 }
 
