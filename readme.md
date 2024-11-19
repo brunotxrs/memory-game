@@ -24,7 +24,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 O projeto é um jogo de memory com emojis.
 
-- Acesse o projeto finalizado, [online](https://brunotxrs.github.io/petlife/)
+- Acesse o projeto finalizado, [online](https://brunotxrs.github.io/Memory-Game/)
 
 ---
 
