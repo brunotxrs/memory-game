@@ -70,6 +70,10 @@ Este projeto foi desenvolvido como parte do aprendizado no curso **Ri Happy - Fr
   <img alt="Projeto Memory Game" src="./src/memory-game.png" width="100%">
 </p>
 
+## Observações
+* Esta é a primeira versão do jogo, desenvolvida com **HTML**, **CSS** e **JavaScript** puro.
+* O código desta versão foi arquivado na branch ``first-version`` e não será mesclado com a branch principal (``main``).
+
 ## 📜Licença
 Este projeto está sob a [licença MIT](./License).
 
