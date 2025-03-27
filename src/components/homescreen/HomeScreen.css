@@ -145,11 +145,20 @@
             align-items: center;
             height: 100px;
             gap: 20px;
+
+            .box-info {
+                height: 50px;
+
+                .initial-info, .error-message{
+                    font-family: var(--font);
+                    text-shadow: 1px 1px 2px #00000069;
+                    text-align: center;
+                    height: 80px;
     
-            .text-info{
-                font-family: var(--font);
-                text-shadow: 1px 1px 2px #00000069;
+                }
             }
+    
+            
     
             .box-Button {
                 box-shadow: 2px 2px 5px #000000ca;
