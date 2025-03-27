@@ -1,12 +1,63 @@
-import React from "react";
+import React, { useState } from "react";
 import '../../components/homescreen/HomeScreen.css';
 
-function StartButton() {
+import { useNavigate } from "react-router-dom";
+
+function StartButton({ playerName, nameError, level }) {
+
+    const navigate = useNavigate();
+    const [showError, setShowError] = useState(false);
+
+    const handleClickStart = () => {
+
+        if(playerName && playerName.length >= 3 && playerName.length <= 5 && !nameError && level) {
+            console.log("Nome válido:", playerName);
+            console.log("Nível escolhido:", level);
+            setShowError(false);
+            navigate('/game', { state: { playerName, level } });
+            
+        }else{
+            setShowError(true);
+
+
+            setTimeout(() => {
+                setShowError(false);
+            }, 2000)
+            
+        }
+
+    }
+
+    const initialMessageStyle = {
+        fontSize: '1.2em', 
+        color: 'black',
+    };
+
+    const errorMessageStyle = {
+        fontSize: '1em',
+        color: 'red', 
+        fontWeight: '700',
+    };
+
+
     return(
         <div className="container-start-button">
-            <div className="text-info">Encontre todos os pares de cartas!</div>
+
+            <div className="box-info">
+                <div className="initial-info" style={initialMessageStyle} hidden={showError}>
+                    Encontre todos os pares de cartas!
+                </div>
+                <div className="error-message" style={errorMessageStyle} hidden={!showError}>
+                    Por favor, insira um nome entre 3 e 5 caracteres e selecione um nível.
+                </div>
+            </div>
+
+
             <div className="box-Button">
-                <button className="btn-start">
+
+                <button className="btn-start" 
+                onClick={handleClickStart}
+                >
                     <p>start</p>
                 </button>
             </div>
