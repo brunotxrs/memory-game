@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import '../../components/homescreen/HomeScreen.css';
 
 import { useNavigate } from "react-router-dom";
+import { PlayerContext } from '../contexts/PlayerContext'
 
-function StartButton({ playerName, nameError, level }) {
+function StartButton() {
 
     const navigate = useNavigate();
     const [showError, setShowError] = useState(false);
+    const { playerName, nameError, level } = useContext(PlayerContext);
 
     const handleClickStart = () => {
 
@@ -14,7 +16,7 @@ function StartButton({ playerName, nameError, level }) {
             console.log("Nome válido:", playerName);
             console.log("Nível escolhido:", level);
             setShowError(false);
-            navigate('/game', { state: { playerName, level } });
+            navigate('/gamescreen', { state: { playerName, level } });
             
         }else{
             setShowError(true);
@@ -57,6 +59,7 @@ function StartButton({ playerName, nameError, level }) {
 
                 <button className="btn-start" 
                 onClick={handleClickStart}
+                
                 >
                     <p>start</p>
                 </button>
