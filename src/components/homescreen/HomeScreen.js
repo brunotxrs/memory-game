@@ -8,12 +8,6 @@ import { PlayerContext } from '../contexts/PlayerContext'
 
 function HomeScreen() {
 
-    const { playerName } = useContext(PlayerContext);
-
-    useEffect(() => {
-        console.log("Nome do jogador:", playerName);
-    }, [playerName]);
-
     return (
         <div className="container-homescreen">
             <div className="box-logo">
