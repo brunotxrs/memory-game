@@ -1,48 +1,144 @@
+@import url(../../index.css);
+
 .container-gamescreen {
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(to bottom right,  #00aaff, #00ccff);
+    background: linear-gradient(to bottom right, #00aaff, #00ccff);
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    .box-dashboard {
-        width: 100%;
-        height: 100px;
-        display: flex;
-        flex-direction: column;
-        /* flex-wrap: nowrap; */
-        align-items: center;
-        justify-content: center;
-        outline: 1px solid yellow;
-
-
-
-        div:nth-child(1), div:nth-child(2), div:nth-child(3) {
-            width: 100%;
-            padding: 5px 20px;
-            display: flex;
-            flex-direction: row;
-            gap: 10px;
-
-
-
-            span:nth-child(1) {
-                outline: 1px solid red;
-                width: 100px;
-            }
-
-            span:nth-child(2) {
-                outline: 1px solid red;
-                width: 100px;
-                display: flex;
-                flex-direction: row;
-                justify-content: flex-end;
-            }
-
-
-        }
-        
-    }
 }
 
+.container-gamescreen .box-dashboard {
+    width: 100vw;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to bottom right, #00aaff7c, #00ccff25),
+    url('../../assets/img/dashboard.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.container-gamescreen .box-dashboard div:nth-child(1),
+.container-gamescreen .box-dashboard div:nth-child(2),
+.container-gamescreen .box-dashboard div:nth-child(3) {
+    width: 100%;
+    padding: 5px 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.container-gamescreen .box-dashboard div span:nth-child(1) {
+    width: 100px;
+    text-align: center;
+    font-size: 2em;
+    color: #fff;
+    filter: drop-shadow(2px 2px 10px #000);
+}
+
+.container-gamescreen .box-dashboard div span:nth-child(2) {
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    font-size: 2em;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 2px 2px 5px #000;
+    font-family: var(--font);
+}
+
+.container-gamescreen .container-game {
+    width: 100vw;
+    height: calc(100vh - 150px); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; 
+    box-sizing: border-box; 
+}
+
+.container-gamescreen .container-game .box-game {
+    display: grid; 
+    gap: 10px; 
+    height: auto; 
+    width: 90vw;
+    max-width: 600px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; 
+    box-sizing: border-box; 
+}
+
+
+.container-gamescreen .container-game .box-game.grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.container-gamescreen .container-game .box-game.grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.container-gamescreen .container-game .box-game .card {
+    background-color: #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    aspect-ratio: 1 / 1; 
+    position: relative;
+    perspective: 1000px; 
+}
+
+.container-gamescreen .container-game .box-game .card .card-inner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.container-gamescreen .container-game .box-game .card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.container-gamescreen .container-game .box-game .card .card-front,
+.container-gamescreen .container-game .box-game .card .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 2em;
+    user-select: none; 
+}
+
+.container-gamescreen .container-game .box-game .card .card-front {
+    background-color: #f2f2f2;
+    color: #333;
+    z-index: 2; 
+}
+
+.container-gamescreen .container-game .box-game .card .card-back {
+    background-color: #4CAF50; /* Cor de fundo para o verso */
+    color: #fff;
+    transform: rotateY(180deg); /* Rotaciona o verso inicialmente para ficar escondido */
+    z-index: 1;
+}
+
+.container-gamescreen .container-game .box-game .card.matched .card-inner {
+    transform: rotateY(180deg); 
+    opacity: 0.7;
+}
+
+.container-gamescreen .container-game .box-game.grid-cols-4 .card .card-back {
+    font-size: 1.5em;
+}
