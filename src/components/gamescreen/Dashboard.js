@@ -57,7 +57,7 @@ function DaschboardGame() {
 
     return (
 
-        <div className="container-dashboard-game">
+        <div className="container-dashboard-game" translate="no">
 
             <div className="box-dashboard">
                 <div>
