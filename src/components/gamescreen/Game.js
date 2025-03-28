@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 
 import '../../components/gamescreen/GameScreen.css';
 import { PlayerContext } from '../contexts/PlayerContext';
+import { useLocation } from 'react-router-dom';
 
 const allEmojis = [
     "😎", "😎", "😛", "😛", "👽", "👽", "🤖", "🤖",
@@ -16,6 +17,15 @@ function Game() {
     const [ cards, setCards ] = useState([]);
     const [ flippedCards, setFlippedCards ] = useState([]);
     const [ matchedCards, setMatchedCards ] = useState([]);
+    const location = useLocation();
+    const classeAdicional = location.state?.classeAdicional || '';
+
+    useEffect(() => {
+        document.body.className = classeAdicional;
+        return () => {
+            document.body.className = '';
+        };
+    }, [classeAdicional]);
 
     useEffect(() => {
         const shuffleArray = (array) => {
