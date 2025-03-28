@@ -3,55 +3,59 @@
 .container-gamescreen {
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(to bottom right, #00aaff, #00ccff);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: rgba(0, 0, 0, 0.737);
 }
 
 .container-gamescreen .box-dashboard {
     width: 100vw;
     height: 150px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(to bottom right, #00aaff7c, #00ccff25),
-    url('../../assets/img/dashboard.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    border-bottom: 2px solid #00aaff90;
+    background: linear-gradient(to bottom,#00ccff25, #00aaff7c );
 }
 
 .container-gamescreen .box-dashboard div:nth-child(1),
 .container-gamescreen .box-dashboard div:nth-child(2),
 .container-gamescreen .box-dashboard div:nth-child(3) {
-    width: 100%;
-    padding: 5px 20px;
+    width: 100px;
+    height: 100%;
     display: flex;
-    flex-direction: row;
-    gap: 10px;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
+
 
 .container-gamescreen .box-dashboard div span:nth-child(1) {
-    width: 100px;
+    width: 100%;
     text-align: center;
     font-size: 2em;
-    color: #fff;
-    filter: drop-shadow(2px 2px 10px #000);
+    color:  #fff;
+    filter: drop-shadow(2px 2px 1px #02418d);
+    text-align: center;
 }
 
+
 .container-gamescreen .box-dashboard div span:nth-child(2) {
-    width: 160px;
+    width: 100px;
     display: flex;
     flex-direction: column;
     justify-content: end;
     align-items: center;
     font-size: 2em;
     font-weight: 700;
-    color: #fff;
-    text-shadow: 2px 2px 5px #000;
+    color: #fff04d;
+    text-shadow: 2px 2px 5px #984200;
     font-family: var(--font);
+
 }
 
 .container-gamescreen .container-game {
@@ -122,15 +126,16 @@
 }
 
 .container-gamescreen .container-game .box-game .card .card-front {
-    background-color: #f2f2f2;
+    background: url(../../assets/img/memory-game.png) no-repeat center;
+    background-size: contain;
     color: #333;
     z-index: 2; 
 }
 
 .container-gamescreen .container-game .box-game .card .card-back {
-    background-color: #4CAF50; /* Cor de fundo para o verso */
+    background-color: #4CAF50;
     color: #fff;
-    transform: rotateY(180deg); /* Rotaciona o verso inicialmente para ficar escondido */
+    transform: rotateY(180deg); 
     z-index: 1;
 }
 
