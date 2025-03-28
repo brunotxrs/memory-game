@@ -49,11 +49,6 @@ function DaschboardGame() {
 
     };
 
-    const optionLevel = () => {
-
-    }
-
-
 
     return (
 
