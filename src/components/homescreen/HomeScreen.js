@@ -1,15 +1,14 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import './HomeScreen.css'
-import logo from '../../assets/img/jogo da memoria.png'
+import logo from '../../assets/img/memory-game.png'
 import LevelSelector from "./LevelSelector";
 import NameInput from "./NameInput";
 import StartButton from "./StartButton";
-import { PlayerContext } from '../contexts/PlayerContext'
 
 function HomeScreen() {
 
     return (
-        <div className="container-homescreen">
+        <div className="container-homescreen" translate="no">
             <div className="box-logo">
                 <img className="logo" src={logo} alt="logo Jogo de Memoria"/>
             </div>
