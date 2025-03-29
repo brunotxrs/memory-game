@@ -13,7 +13,7 @@ const allEmojis = [
 
 
 function Game() {
-    const { level } = useContext(PlayerContext);
+    const { level, setGameOver } = useContext(PlayerContext);
     const [ cards, setCards ] = useState([]);
     const [ flippedCards, setFlippedCards ] = useState([]);
     const [ matchedCards, setMatchedCards ] = useState([]);
@@ -95,6 +95,15 @@ function Game() {
             if (card1.emoji === card2.emoji) {
                 setMatchedCards([...matchedCards, card1.id, card2.id]);
                 setFlippedCards([]);
+
+                if (matchedCards.length + 2 === cards.length && cards.length > 0) {
+                    console.log("🎉 Parabéns! Você acertou todas as cartas!");
+
+                    setGameOver(true);
+                    console.log("⏱️ Tempo parado!");
+                    
+                }
+
             } else {
                 setTimeout(() => {
                     const newCards = cards.map((c) =>
