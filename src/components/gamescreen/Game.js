@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 
 import '../../components/gamescreen/GameScreen.css';
 import { PlayerContext } from '../contexts/PlayerContext';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const allEmojis = [
     "😎", "😎", "😛", "😛", "👽", "👽", "🤖", "🤖",
@@ -13,12 +13,35 @@ const allEmojis = [
 
 
 function Game() {
-    const { level, setGameOver } = useContext(PlayerContext);
+    const { playerName, setPlayerName, level , setLevel, setGameOver, pairsMatched, setPairsMatched, score, setScore, bonus, setBonus } = useContext(PlayerContext);
     const [ cards, setCards ] = useState([]);
     const [ flippedCards, setFlippedCards ] = useState([]);
     const [ matchedCards, setMatchedCards ] = useState([]);
     const location = useLocation();
     const classeAdicional = location.state?.classeAdicional || '';
+    const navigate = useNavigate();
+
+    useEffect(() => {
+
+        const storedName = localStorage.getItem('playerName');
+        const storedLevel = localStorage.getItem('level');
+
+        if(storedName) {
+            setPlayerName(storedName);
+            console.log("Nome carregado do localStorage:", storedName);
+        }
+
+        if(storedLevel) {
+            setLevel(storedLevel);
+            console.log("Nível carregado do localStorage:", storedLevel);
+        }
+
+        if(!playerName || !level) {
+            console.log("Redirecionando para HomeScreen. Dados não encontrados.");
+            navigate('/');
+        }
+
+    }, [ navigate, playerName, level, setPlayerName, setLevel ]);
 
     useEffect(() => {
         document.body.className = classeAdicional;
@@ -95,13 +118,25 @@ function Game() {
             if (card1.emoji === card2.emoji) {
                 setMatchedCards([...matchedCards, card1.id, card2.id]);
                 setFlippedCards([]);
+                setPairsMatched(prevCount => prevCount + 1);
+
+                let pointsToAdd = 0;
+                if (level === 'easy') {
+                    if (pairsMatched < 2) pointsToAdd = 150;
+                    else pointsToAdd = 100;
+
+                     console.log("vendo os pontos" ,pointsToAdd)
+                } 
+
+                setBonus(prevScore => prevScore + pointsToAdd);
+
+                console.log("Pontuação total:", (bonus * 2));
 
                 if (matchedCards.length + 2 === cards.length && cards.length > 0) {
+
                     console.log("🎉 Parabéns! Você acertou todas as cartas!");
 
                     setGameOver(true);
-                    console.log("⏱️ Tempo parado!");
-                    
                 }
 
             } else {
@@ -114,7 +149,7 @@ function Game() {
                 }, 1000);
             }
         }
-    }, [flippedCards, cards, matchedCards]);
+    }, [flippedCards, cards, matchedCards, level, pairsMatched, setBonus, setGameOver]);
 
 
     const boxGameClass = `box-game grid-cols-${gridColumns}`;
