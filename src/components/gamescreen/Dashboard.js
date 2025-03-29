@@ -7,22 +7,29 @@ import { faHeart, faStopwatch, faUserAstronaut } from "@fortawesome/free-solid-s
 
 function DaschboardGame() {
 
-    const { playerName , level} = useContext(PlayerContext);
+    const { playerName ,  level, gameOver, setGameOver} = useContext(PlayerContext);
     const [ timeRemaining,  setTimeRemaining ] = useState(0);
-    const [ lives,  setLives ] = useState(0);
+    const [ lives,  setLives,  ] = useState(0);
 
     useEffect(() => {
-        if(timeRemaining > 0){
+        let intervalId;
 
-            const time = setInterval(() => {
-                setTimeRemaining(timeRemaining -1);
-
-                
+        if(timeRemaining > 0 && !gameOver){ 
+            intervalId = setInterval(() => {
+                setTimeRemaining(prevTime => prevTime -1);
             }, 1000);
+        } else if (gameOver) {
+            clearInterval(intervalId); 
+            console.log("⏱️ Cronômetro parado. Tempo restante:", timeRemaining);
 
-            return () => clearInterval(time);
+            if (timeRemaining === 0 && !gameOver) {
+                setGameOver(true);
+                console.log("🚩 Jogo acabou por tempo!");
+            }
         }
-    }, [timeRemaining]);
+
+        return () => clearInterval(intervalId);
+    }, [timeRemaining, gameOver, setGameOver]); 
 
     useEffect(() => {
         if(level === 'easy') {
