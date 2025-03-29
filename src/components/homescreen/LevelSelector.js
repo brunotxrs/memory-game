@@ -9,7 +9,9 @@ function LevelSelector() {
     const { setLevel} = useContext(PlayerContext);
 
     const handleLevelChange = (event) => {
-        setLevel(event.target.value);
+        const level = event.target.value;
+        setLevel(level)
+        localStorage.setItem('level', level)
     };
 
     return(

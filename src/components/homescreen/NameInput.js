@@ -7,8 +7,12 @@ function NameInput() {
     const { setPlayerName, SetNameError, nameError } = useContext(PlayerContext);
 
     const handleInputChange = (event) => {
+        
         const name = event.target.value;
+        setPlayerName(name)
+        localStorage.setItem('playerName', name)
         setPlayerName(name);
+
         if(name.length === 0) {
             SetNameError('')
         } else if (name.length < 3) {
