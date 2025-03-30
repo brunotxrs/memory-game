@@ -13,13 +13,25 @@ const allEmojis = [
 
 
 function Game() {
-    const { playerName, setPlayerName, level , setLevel, setGameOver, pairsMatched, setPairsMatched, score, setScore, bonus, setBonus } = useContext(PlayerContext);
+    const { playerName, setPlayerName, level , setLevel, gameOver, setGameOver, pairsMatched, setPairsMatched, bonus, setBonus, lives, setLives } = useContext(PlayerContext);
     const [ cards, setCards ] = useState([]);
     const [ flippedCards, setFlippedCards ] = useState([]);
     const [ matchedCards, setMatchedCards ] = useState([]);
     const location = useLocation();
     const classeAdicional = location.state?.classeAdicional || '';
     const navigate = useNavigate();
+    const [isGameActive, setIsGameActive] = useState(true);
+    const [showErrorEmoji, setShowErrorEmoji] = useState(false);
+
+    useEffect(() => {
+        
+        if(gameOver) {
+            setIsGameActive(false);
+            setTimeout(() => {
+                navigate('/scoredashboard');
+            }, 2000);
+        }
+    }, [gameOver, navigate])
 
     useEffect(() => {
 
@@ -28,16 +40,15 @@ function Game() {
 
         if(storedName) {
             setPlayerName(storedName);
-            console.log("Nome carregado do localStorage:", storedName);
+            
         }
 
         if(storedLevel) {
             setLevel(storedLevel);
-            console.log("Nível carregado do localStorage:", storedLevel);
+            
         }
 
         if(!playerName || !level) {
-            console.log("Redirecionando para HomeScreen. Dados não encontrados.");
             navigate('/');
         }
 
@@ -125,31 +136,45 @@ function Game() {
                     if (pairsMatched < 2) pointsToAdd = 150;
                     else pointsToAdd = 100;
 
-                     console.log("vendo os pontos" ,pointsToAdd)
-                } 
+                } else if (level === "medium") {
+                    if(pairsMatched < 3) pointsToAdd = 200; else pointsToAdd = 150;
+                    
+                } else if (level === "hard") {
+                    if(pairsMatched < 4) pointsToAdd = 250; else pointsToAdd = 200;
+                    
+                }
 
                 setBonus(prevScore => prevScore + pointsToAdd);
 
-                console.log("Pontuação total:", (bonus * 2));
-
                 if (matchedCards.length + 2 === cards.length && cards.length > 0) {
-
-                    console.log("🎉 Parabéns! Você acertou todas as cartas!");
 
                     setGameOver(true);
                 }
 
             } else {
+
+                setShowErrorEmoji(true);
+
+
                 setTimeout(() => {
                     const newCards = cards.map((c) =>
                         c.id === card1.id || c.id === card2.id ? { ...c, isFlipped: false } : c
                     );
                     setCards(newCards);
                     setFlippedCards([]);
+                    setLives(prevLives => prevLives - 1);
+
+                    if(lives <= 1 ){
+                        setGameOver(true);
+                        
+                    }
+
+                    setShowErrorEmoji(false);
+
                 }, 1000);
             }
         }
-    }, [flippedCards, cards, matchedCards, level, pairsMatched, setBonus, setGameOver]);
+    }, [ flippedCards, cards, matchedCards, level, pairsMatched, setBonus, setGameOver, setLives, lives ]);
 
 
     const boxGameClass = `box-game grid-cols-${gridColumns}`;
@@ -157,7 +182,13 @@ function Game() {
     return(
 
         <div className="container-game">
-            <div className={boxGameClass}>
+
+            {showErrorEmoji && (
+                <div className="error-emoji">💔</div>
+            )}
+
+            {isGameActive ? (
+                <div className={boxGameClass}>
                 {cards.map((card) => (
                     <div
                         key={card.id}
@@ -169,8 +200,17 @@ function Game() {
                             <div className="card-back">{card.emoji}</div>
                         </div>
                     </div>
-                ))}
-            </div>
+                    ))}
+                </div>
+
+            ) : (
+
+                <div className="game-over-message">
+                    <h2>Game Over</h2>
+                    <p>Sua pontuação será exibida em breve...</p>
+                </div>
+                
+            )}
         </div>
     );
 };
