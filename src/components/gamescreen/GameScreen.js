@@ -1,7 +1,7 @@
 import React from "react";
 
 import '../gamescreen/GameScreen.css'
-import DaschboardGame from "./Dashboard";
+import DashboardGame from "./Dashboard";
 import Game from "./Game";
 
 
@@ -12,7 +12,7 @@ function GameScreen() {
     return (
 
         <div className="container-gamescreen">
-            <DaschboardGame />
+            <DashboardGame />
             <Game />
 
         </div>

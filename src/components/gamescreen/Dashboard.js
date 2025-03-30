@@ -5,7 +5,7 @@ import { PlayerContext } from '../../components/contexts/PlayerContext'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faStopwatch, faUserAstronaut } from "@fortawesome/free-solid-svg-icons";
 
-function DaschboardGame() {
+function DashboardGame() {
 
     const { playerName ,  level, gameOver, setGameOver, score, setScore, lives} = useContext(PlayerContext);
     const [ timeRemaining,  setTimeRemaining ] = useState(0);
@@ -115,4 +115,4 @@ function DaschboardGame() {
     );
 };
 
-export default DaschboardGame;
+export default DashboardGame;
