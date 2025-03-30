@@ -67,6 +67,7 @@
     justify-content: center;
     padding: 20px; 
     box-sizing: border-box; 
+
 }
 
 .container-gamescreen .container-game .box-game {
@@ -79,6 +80,7 @@
     justify-content: center;
     padding: 20px; 
     box-sizing: border-box; 
+
 }
 
 
@@ -146,4 +148,48 @@
 
 .container-gamescreen .container-game .box-game.grid-cols-4 .card .card-back {
     font-size: 1.5em;
+}
+
+
+.container-game .game-over-message {
+
+    width: 100vw;
+    height: calc(100vh - 150px); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px; 
+    box-sizing: border-box;
+    
+    h2 {
+        color: #fff;
+        font-family: var(--font-gameover);
+    }
+
+    p {
+        color: #fff;
+        text-align: center;
+        font-family: var(--font);
+    }
+
+
+}
+
+.container-game .error-emoji {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5em;
+    color: #ff0000;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none; 
+    z-index: 10; 
+}
+
+.container-game .error-emoji.hidden {
+    opacity: 0;
 }
