@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const PlayerContext = createContext();
 
@@ -13,7 +13,19 @@ export const PlayerProvider = ({children}) => {
     const [ gameOver, setGameOver ] = useState(false);
     const [ point , setPoint ] = useState(0);
     const [ pairsMatched, setPairsMatched ] = useState(0);
-    const [ bonus ,  setBonus ] = useState(0)
+    const [ bonus ,  setBonus ] = useState(0);
+
+    useEffect(() => {
+        if(level === 'easy') {
+            setLives(2);
+        } else if(level === 'medium'){
+            setLives(4);
+        } else if(level === 'hard'){
+            setLives(8);
+        } else {
+            setLives(0);
+        }
+    }, [level, setLives]);
 
     return (
         <PlayerContext.Provider value={{ playerName, setPlayerName, nameError, SetNameError, level,setLevel, classeAdicional, setClasseAdicional, score, setScore, lives, setLives, timeRemaining, setTimeRemaining, gameOver, setGameOver, point , setPoint, pairsMatched, setPairsMatched, bonus ,  setBonus }}>
