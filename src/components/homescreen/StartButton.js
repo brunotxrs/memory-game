@@ -14,8 +14,6 @@ function StartButton() {
     const handleClickStart = () => {
 
         if(playerName && playerName.length >= 3 && playerName.length <= 5 && !nameError && level) {
-            console.log("Nome válido:", playerName);
-            console.log("Nível escolhido:", level);
             setShowError(false);
             navigate('/gamescreen', { state: { playerName, level, classeAdicional: 'background' } });
             
