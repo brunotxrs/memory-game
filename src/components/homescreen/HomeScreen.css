@@ -7,13 +7,12 @@
     user-select: none;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
 
     .box-logo {
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 15px 0;
+        height: 150px;
 
         .logo {
             width: 300px;
@@ -25,7 +24,7 @@
 
     .box-components {
         width: 100%;
-        height: 400px;
+        height: calc(100vh - 250px);
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
