@@ -29,13 +29,11 @@ function StartButton() {
 
     }
 
-    const initialMessageStyle = {
-        fontSize: '1.2em', 
+    const initialMessageStyle = { 
         color: 'black',
     };
 
     const errorMessageStyle = {
-        fontSize: '1em',
         color: 'red', 
         fontWeight: '700',
     };
