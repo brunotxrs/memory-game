@@ -22,13 +22,14 @@ function Game() {
     const navigate = useNavigate();
     const [isGameActive, setIsGameActive] = useState(true);
     const [showErrorEmoji, setShowErrorEmoji] = useState(false);
+    
 
     useEffect(() => {
         
         if(gameOver) {
             setIsGameActive(false);
             setTimeout(() => {
-                navigate('/scoredashboard');
+                navigate('/scoredashboard', {state: {classeNew: 'background-black'}} );
             }, 2000);
         }
     }, [gameOver, navigate])
