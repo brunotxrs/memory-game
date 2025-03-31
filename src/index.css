@@ -18,6 +18,9 @@
   background: #023E85;
 }
 
+.background-black {
+  background: #000;
+}
 
 body {
   margin: 0;
