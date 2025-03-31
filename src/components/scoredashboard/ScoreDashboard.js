@@ -3,7 +3,7 @@ import './ScoreDashboard.css';
 import { PlayerContext } from '../contexts/PlayerContext'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMedal, faTrophy } from "@fortawesome/free-solid-svg-icons";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function ScoreDashboard() {
     const { playerName, score, bonus, level } = useContext(PlayerContext);
@@ -11,6 +11,16 @@ function ScoreDashboard() {
     const pointTotal = score + bonus;
     const [ showWin, setShowWin ] = useState(false);
     const navigate  = useNavigate();
+    const location = useLocation()
+    const classeNew = location.state?.classeNew || '';
+
+    useEffect(() => {
+        document.body.className = classeNew;
+
+        return() => {
+            document.body.className = '';
+        }
+    }, [classeNew]);
 
     useEffect(() => {
         let currentPlayers = [];
