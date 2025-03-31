@@ -1,9 +1,10 @@
-import React, { useContext, useEffect, useMemo, useState } from "react";
+import React, { useContext, useEffect, useMemo, useRef, useState } from "react";
 import './ScoreDashboard.css';
 import { PlayerContext } from '../contexts/PlayerContext'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMedal, faTrophy } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate, useLocation } from "react-router-dom";
+import songScore from '../../assets/music/song-score.mp4';
 
 function ScoreDashboard() {
     const { playerName, score, bonus, level } = useContext(PlayerContext);
@@ -13,6 +14,7 @@ function ScoreDashboard() {
     const navigate  = useNavigate();
     const location = useLocation()
     const classeNew = location.state?.classeNew || '';
+    const songScoreRef = useRef(new Audio(songScore));
 
     useEffect(() => {
         document.body.className = classeNew;
@@ -51,7 +53,12 @@ function ScoreDashboard() {
 
     useEffect(() => {
         if(players.length > 0 && players[0].name === playerName){
+            songScoreRef.current.loop = true;
+            songScoreRef.current.play().catch(error => {
+                console.error("Erro ao reproduzir áudio de acerto:", error);
+            })
             setShowWin(true);
+
         } else {
             setShowWin(false)
         }
