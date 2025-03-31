@@ -7,6 +7,7 @@ export const PlayerProvider = ({children}) => {
     const [ nameError, SetNameError ] = useState('');
     const [ level , setLevel ] = useState('');
     const [ classeAdicional, setClasseAdicional ] = useState('');
+    const [ classeNew, setClasseNew ] = useState('');
     const [ score, setScore ] = useState(0);
     const [ lives, setLives] = useState(0);
     const [ timeRemaining, setTimeRemaining ] = useState(0);
@@ -28,7 +29,7 @@ export const PlayerProvider = ({children}) => {
     }, [level, setLives]);
 
     return (
-        <PlayerContext.Provider value={{ playerName, setPlayerName, nameError, SetNameError, level,setLevel, classeAdicional, setClasseAdicional, score, setScore, lives, setLives, timeRemaining, setTimeRemaining, gameOver, setGameOver, point , setPoint, pairsMatched, setPairsMatched, bonus ,  setBonus }}>
+        <PlayerContext.Provider value={{ playerName, setPlayerName, nameError, SetNameError, level,setLevel, classeAdicional, setClasseAdicional, score, setScore, lives, setLives, timeRemaining, setTimeRemaining, gameOver, setGameOver, point , setPoint, pairsMatched, setPairsMatched, bonus ,  setBonus, classeNew, setClasseNew }}>
             {children}
         </PlayerContext.Provider>
     );
