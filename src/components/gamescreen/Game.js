@@ -1,8 +1,9 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState, useContext, useRef } from "react";
 
 import '../../components/gamescreen/GameScreen.css';
 import { PlayerContext } from '../contexts/PlayerContext';
 import { useLocation, useNavigate } from 'react-router-dom';
+import sonCard from '../../assets/music/song-card.mp4';
 
 const allEmojis = [
     "😎", "😎", "😛", "😛", "👽", "👽", "🤖", "🤖",
@@ -22,6 +23,7 @@ function Game() {
     const navigate = useNavigate();
     const [isGameActive, setIsGameActive] = useState(true);
     const [showErrorEmoji, setShowErrorEmoji] = useState(false);
+    const hitCard = useRef(new Audio(sonCard))
     
 
     useEffect(() => {
@@ -121,6 +123,11 @@ function Game() {
             );
             setCards(newCards);
             setFlippedCards([...flippedCards, card]);
+            // por aqui o son pra carta
+            hitCard.current.currentTime = 0;
+            hitCard.current.play().catch(error => {
+                console.error("Erro ao reproduzir áudio de acerto:", error);
+            })
         }
     };
 
