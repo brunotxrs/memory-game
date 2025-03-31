@@ -45,7 +45,12 @@ function ScoreDashboard() {
         } else {
             setShowWin(false)
         }
-    }, [players, playerName])
+    }, [players, playerName]);
+
+    const handleRestart = () => {
+        navigate('/');
+        window.location.reload();
+    };
 
 
     return (
@@ -84,7 +89,7 @@ function ScoreDashboard() {
                 <div className="box-btn">
                     <div className="btn">
 
-                        <button className="btn-restart" onClick={(() => navigate('/homescreen'))}>
+                        <button className="btn-restart" onClick={handleRestart}>
                             <span>restart</span>
                         </button>
 
