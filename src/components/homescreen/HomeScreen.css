@@ -148,6 +148,14 @@
             .box-info {
                 height: 50px;
 
+                .initial-info{
+                    font-size: 1.2em;
+                }
+
+                .error-message {
+                    font-size: 1em;
+                }
+
                 .initial-info, .error-message{
                     font-family: var(--font);
                     text-shadow: 1px 1px 2px #00000069;
@@ -189,5 +197,218 @@
     
 
     
+
+}
+
+@media screen and (min-width: 700px) {
+    
+
+    .container-homescreen {
+        background: linear-gradient(to bottom right,  #00aaff, #00ccff);
+        height: 100vh;
+        width: 100vw;
+        user-select: none;
+        display: flex;
+        flex-direction: column;
+        padding: 30px 0 0 0;
+    
+        .box-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 150px;
+    
+            .logo {
+                width: 400px;
+                filter: drop-shadow( 2px 2px 6px #000000ca);
+                user-select: none;
+            }
+    
+        }
+    
+        .box-components {
+            width: 100%;
+            height: calc(100vh - 250px);
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+
+
+    
+            .container-name-input {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                height: 100px;
+        
+        
+                .box-error {
+                    width: 100%;
+                    height: 50px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+        
+                    .error-message {
+                        color: #ff0000;
+                        text-align: center;
+                        font-family: var(--font);
+                        font-weight: 600;
+                        text-shadow: unset 1px 1px 2px #00000069;
+                        padding: 0 20px;
+                        font-size: 2em;
+                    }
+        
+                }
+        
+        
+                input[type="text"] {
+                    border: none;
+                    height: 40px;
+                    border-radius: 5px;
+                    text-align: center;
+                    font-size: 2rem;
+                    font-family: var(--font);
+                    font-weight: 700;
+                    outline: none;
+                    box-shadow: none;
+                    transition: box-shadow 2s ,  outline 2s ;
+        
+                }
+        
+                input[type="text"]:hover {
+                    outline: 2px solid #094080;
+                    box-shadow: 2px 2px 5px #000;
+        
+                }
+
+                input[type="text"]:focus-visible {
+                    outline: 2px solid #094080;
+                    box-shadow: 2px 2px 5px #000;
+        
+                }
+        
+                
+        
+            }
+        
+            .container-level-selector{
+                width: 100%;
+                height: 50px;
+         
+        
+                .box-level{
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    align-items: center;
+                    justify-content: space-evenly;
+        
+                    label {
+        
+                        width: 100px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 5px;
+                        font-family: var(--font);
+                        font-size: 1.2rem;
+                        font-weight: 600;
+                        text-shadow: 1px 1px 1.5px #000000ca;
+        
+                        input[type="radio"] {
+                            appearance: none;
+                            width: 20px;
+                            height: 20px;
+                            border: 2px solid #f1f1f1;
+                            border-radius: 50%;
+                            background-color: #984006c8;
+                            cursor: pointer;
+                            vertical-align: middle;
+                            transition: box-shadow 2s;
+                            
+                        }
+        
+                        input[type="radio"]:checked {
+                            border: none;
+                            background-color: #0088D0;
+                            background-image: radial-gradient(circle at center,  #fff153d3 50%, transparent 55%);
+                            box-shadow: 2px 2px 1.5px #000000ca;
+                        }
+        
+                        input[type="radio"]:focus-visible {
+                            outline: none;
+                        }
+        
+                    }
+                }
+        
+            }
+        
+            .container-start-button {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                justify-content: space-around;
+                align-items: center;
+                height: 100px;
+                gap: 20px;
+    
+                .box-info {
+                    height: 50px;
+
+                    
+    
+                    .initial-info, .error-message{
+                        font-family: var(--font);
+                        text-shadow: 1px 1px 2px #00000069;
+                        text-align: center;
+                        height: 80px;
+                        font-size: 2em;
+                        
+        
+                    }
+                }
+        
+                
+        
+                .box-Button {
+                    box-shadow: 2px 2px 5px #000000ca;
+                    
+                    .btn-start {
+                        border: none;
+                        padding: 10px 30px;
+                        border-radius: 5px;
+                        box-shadow: 0px 2px 5px #000;
+                        transition: transform 0.1s ease;
+                        outline: 2px solid #000;
+        
+                        p {
+                            font-family: var(--font);
+                            font-size: 2em;
+                            font-weight: 600;
+                        }
+                    }
+        
+                    .btn-start:active {
+                        transform: translateY(2px);
+                    }
+        
+                }
+        
+            }
+    
+        }
+        
+    
+        
+    
+    }
+    
+
 
 }
