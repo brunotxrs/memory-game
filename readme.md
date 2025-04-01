@@ -63,18 +63,18 @@ memory-game/
 7. **Fim de Jogo:** O jogo termina quando você encontrar todos os pares ou suas vidas chegarem a zero. 💀
 8. **Tela de Pontuação:** Veja sua colocação no ranking e desafie-se novamente! 🏆
 
-<!-- ## 📷 Preview
+## 📷 Preview
 Aqui estão algumas capturas de tela do projeto em diferentes dispositivos:
 
 <p align="center"><strong>Mobile</strong></p>
 <p align="center">
-  <img alt="Projeto Jogo da Memória versão mobile" src="" width="20%">
+  <img alt="Projeto Jogo da Memória versão mobile" src="./src/assets/img/Memory Game - Mobile.gif" width="20%">
 </p>
 
 <p align="center"><strong>Desktop</strong></p>
 <p align="center">
-  <img alt="Projeto Jogo da Memória versão desktop" src=" width="50%">
-</p> -->
+  <img alt="Projeto Jogo da Memória versão desktop" src="./src/assets/img/Memory Game - Desktop.gif" width="50%">
+</p>
 
 ## 🙌 Contribuições
 Sinta-se à vontade para abrir issues com sugestões, bugs ou ideias de melhorias! Pull requests também são super bem-vindos! 🤝
