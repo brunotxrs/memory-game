@@ -101,16 +101,17 @@ function ScoreDashboard() {
                 ))}
             </div>
 
-            <div className="box-win-btn">
-                <div className={`win ${showWin ? 'show' : ''}`}></div>
-                <div className="box-btn">
-                    <div className="btn">
+            <div className="box-win">
+                <div className={`win ${showWin ? 'show' : ''}`}></div>    
+            </div>
 
-                        <button className="btn-restart" onClick={handleRestart}>
-                            <span>restart</span>
-                        </button>
+            <div className="box-btn">
+                <div className="btn">
 
-                    </div>
+                    <button className="btn-restart" onClick={handleRestart}>
+                        <span>restart</span>
+                    </button>
+
                 </div>
             </div>
 
