@@ -14,19 +14,19 @@
 
 .container-gamescreen .box-dashboard {
     width: 100vw;
-    height: 150px;
+    height: 9.375rem;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    border-bottom: 2px solid #00aaff90;
+    border-bottom: 0.125rem solid #00aaff90;
     background: linear-gradient(to bottom,#00ccff25, #00aaff7c );
 }
 
 .container-gamescreen .box-dashboard div:nth-child(1),
 .container-gamescreen .box-dashboard div:nth-child(2),
 .container-gamescreen .box-dashboard div:nth-child(3) {
-    width: 100px;
+    width: 6.25rem;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -38,13 +38,13 @@
     text-align: center;
     font-size: 2em;
     color:  #fff;
-    filter: drop-shadow(2px 2px 1px #02418d);
+    filter: drop-shadow(0.125rem 0.125rem 0.0625rem #02418d);
     text-align: center;
 }
 
 
 .container-gamescreen .box-dashboard div span:nth-child(2) {
-    width: 100px;
+    width: 6.25rem;
     display: flex;
     flex-direction: column;
     justify-content: end;
@@ -52,32 +52,32 @@
     font-size: 2em;
     font-weight: 700;
     color: #fff04d;
-    text-shadow: 2px 2px 5px #984200;
+    text-shadow: 0.125rem 0.125rem 0.3125rem #984200;
     font-family: var(--font);
 
 }
 
 .container-gamescreen .container-game {
     width: 100vw;
-    height: calc(100vh - 150px); 
+    height: calc(100vh - 9.375rem); 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px; 
+    padding: 1.25rem; 
     box-sizing: border-box; 
 
 }
 
 .container-gamescreen .container-game .box-game {
     display: grid; 
-    gap: 10px; 
+    gap: 0.625rem; 
     height: auto; 
     width: 90vw;
-    max-width: 600px;
+    max-width: 37.5rem;
     align-items: center;
     justify-content: center;
-    padding: 20px; 
+    padding: 1.25rem; 
     box-sizing: border-box; 
 
 }
@@ -93,11 +93,11 @@
 
 .container-gamescreen .container-game .box-game .card {
     background-color: #ddd;
-    border-radius: 8px;
+    border-radius: 0.5rem;
     cursor: pointer;
     aspect-ratio: 1 / 1; 
     position: relative;
-    perspective: 1000px; 
+    perspective: 62.5rem; 
 }
 
 .container-gamescreen .container-game .box-game .card .card-inner {
@@ -121,7 +121,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 8px;
+    border-radius: 0.5rem;
     font-size: 2em;
     user-select: none; 
 }
@@ -153,13 +153,13 @@
 .container-game .game-over-message {
 
     width: 100vw;
-    height: calc(100vh - 150px); 
+    height: calc(100vh - 9.375rem); 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 30px;
-    padding: 20px; 
+    gap: 1.875rem;
+    padding: 1.25rem; 
     box-sizing: border-box;
     
     h2 {
@@ -194,18 +194,18 @@
     opacity: 0;
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 43.75rem) {
 
     .container-gamescreen .box-dashboard {
         width: 100vw;
-        height: 150px;
+        height: 9.375rem;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        border-bottom: 2px solid #00aaff90;
+        border-bottom: 0.125rem solid #00aaff90;
         background: linear-gradient(to bottom,#00ccff25, #00aaff7c );
-        gap: 80px;
+        gap: 5rem;
 
     }
 
@@ -214,13 +214,13 @@
         text-align: center;
         font-size: 3em;
         color:  #fff;
-        filter: drop-shadow(2px 2px 1px #02418d);
+        filter: drop-shadow(0.125rem 0.125rem 0.0625rem #02418d);
         text-align: center;
     }
     
     
     .container-gamescreen .box-dashboard div span:nth-child(2) {
-        width: 100px;
+        width: 6.25rem;
         display: flex;
         flex-direction: column;
         justify-content: end;
@@ -228,26 +228,26 @@
         font-size: 3em;
         font-weight: 700;
         color: #fff04d;
-        text-shadow: 2px 2px 5px #984200;
+        text-shadow: 0.125rem 0.125rem 0.3125rem #984200;
         font-family: var(--font);
     
     }
 
     .container-gamescreen .container-game {
         width: 100vw;
-        height: calc(100vh - 120px);
+        height: calc(100vh - 7.5rem);
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-        padding: 20px;
+        padding: 1.25rem;
         box-sizing: border-box;
     }
 
     .container-gamescreen .container-game .box-game.grid-cols-2 {
         grid-template-columns: repeat(2, 0fr);
-        height: calc(100vh - 300px);
+        height: calc(100vh - 18.75rem);
     }
 
     .container-gamescreen .container-game .box-game.grid-cols-4 {
@@ -255,7 +255,7 @@
     }
 
     .container-gamescreen .container-game .box-game .card {
-        height: 100px;
+        height: 6.25rem;
     }
 
     .container-gamescreen .container-game .box-game .card .card-front {
@@ -275,19 +275,19 @@
     .container-gamescreen .container-game .box-game .card.matched .card-inner {
         transform: rotateY(180deg); 
         opacity: 0.7;
-        height: 50px;
+        height: 3.125rem;
     }
 
     .container-game .game-over-message {
 
         width: 100vw;
-        height: calc(100vh - 300px); 
+        height: calc(100vh - 18.75rem); 
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 30px;
-        padding: 20px; 
+        gap: 1.875rem;
+        padding: 1.25rem; 
         box-sizing: border-box;
         
         h2 {

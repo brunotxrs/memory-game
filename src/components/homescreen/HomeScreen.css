@@ -12,11 +12,11 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 150px;
+        height: 9.375rem;
 
         .logo {
-            width: 300px;
-            filter: drop-shadow( 2px 2px 6px #000000ca);
+            width: 18.75rem;
+            filter: drop-shadow( 0.125rem 0.125rem 0.375rem #000000ca);
             user-select: none;
         }
 
@@ -24,7 +24,7 @@
 
     .box-components {
         width: 100%;
-        height: calc(100vh - 250px);
+        height: calc(100vh - 15.625rem);
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
@@ -35,12 +35,12 @@
             flex-direction: column;
             align-items: center;
             justify-content: space-around;
-            height: 100px;
+            height: 6.25rem;
     
     
             .box-error {
                 width: 100%;
-                height: 50px;
+                height: 3.125rem;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -50,8 +50,8 @@
                     text-align: center;
                     font-family: var(--font);
                     font-weight: 600;
-                    text-shadow: unset 1px 1px 2px #00000069;
-                    padding: 0 20px;
+                    text-shadow: unset 0.0625rem 0.0625rem 0.125rem #00000069;
+                    padding: 0 1.25rem;
                 }
     
             }
@@ -59,8 +59,8 @@
     
             input[type="text"] {
                 border: none;
-                height: 40px;
-                border-radius: 5px;
+                height: 2.5rem;
+                border-radius: 0.3125rem;
                 text-align: center;
                 font-size: 1.2rem;
                 font-family: var(--font);
@@ -72,8 +72,8 @@
             }
     
             input[type="text"]:hover {
-                outline: 2px solid #094080;
-                box-shadow: 2px 2px 5px #000;
+                outline: 0.125rem solid #094080;
+                box-shadow: 0.125rem 0.125rem 0.3125rem #000;
     
             }
     
@@ -83,7 +83,7 @@
     
         .container-level-selector{
             width: 100%;
-            height: 50px;
+            height: 3.125rem;
      
     
             .box-level{
@@ -97,21 +97,21 @@
     
                 label {
     
-                    width: 100px;
+                    width: 6.25rem;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    gap: 5px;
+                    gap: 0.3125rem;
                     font-family: var(--font);
                     font-size: 1.2rem;
                     font-weight: 600;
-                    text-shadow: 1px 1px 1.5px #000000ca;
+                    text-shadow: 0.0625rem 0.0625rem 0.0938rem #000000ca;
     
                     input[type="radio"] {
                         appearance: none;
-                        width: 20px;
-                        height: 20px;
-                        border: 2px solid #f1f1f1;
+                        width: 1.25rem;
+                        height: 1.25rem;
+                        border: 0.125rem solid #f1f1f1;
                         border-radius: 50%;
                         background-color: #984006c8;
                         cursor: pointer;
@@ -124,7 +124,7 @@
                         border: none;
                         background-color: #0088D0;
                         background-image: radial-gradient(circle at center,  #fff153d3 50%, transparent 55%);
-                        box-shadow: 2px 2px 1.5px #000000ca;
+                        box-shadow: 0.125rem 0.125rem 0.0938rem #000000ca;
                     }
     
                     input[type="radio"]:focus-visible {
@@ -142,11 +142,11 @@
             flex-wrap: nowrap;
             justify-content: space-around;
             align-items: center;
-            height: 100px;
-            gap: 20px;
+            height: 6.25rem;
+            gap: 1.25rem;
 
             .box-info {
-                height: 50px;
+                height: 3.125rem;
 
                 .initial-info{
                     font-size: 1.2em;
@@ -158,9 +158,9 @@
 
                 .initial-info, .error-message{
                     font-family: var(--font);
-                    text-shadow: 1px 1px 2px #00000069;
+                    text-shadow: 0.0625rem 0.0625rem 0.125rem #00000069;
                     text-align: center;
-                    height: 80px;
+                    height: 5rem;
     
                 }
             }
@@ -168,15 +168,15 @@
             
     
             .box-Button {
-                box-shadow: 2px 2px 5px #000000ca;
+                box-shadow: 0.125rem 0.125rem 0.3125rem #000000ca;
                 
                 .btn-start {
                     border: none;
-                    padding: 10px 30px;
-                    border-radius: 5px;
-                    box-shadow: 0px 2px 5px #000;
+                    padding: 0.625rem 1.875rem;
+                    border-radius: 0.3125rem;
+                    box-shadow: 0rem 0.125rem 0.3125rem #000;
                     transition: transform 0.1s ease;
-                    outline: 2px solid #000;
+                    outline: 0.125rem solid #000;
     
                     p {
                         font-family: var(--font);
@@ -186,7 +186,7 @@
                 }
     
                 .btn-start:active {
-                    transform: translateY(2px);
+                    transform: translateY(0.125rem);
                 }
     
             }
@@ -200,7 +200,7 @@
 
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 43.75rem) {
     
 
     .container-homescreen {
@@ -210,17 +210,17 @@
         user-select: none;
         display: flex;
         flex-direction: column;
-        padding: 30px 0 0 0;
+        padding: 1.875rem 0 0 0;
     
         .box-logo {
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 150px;
+            height: 9.375rem;
     
             .logo {
-                width: 400px;
-                filter: drop-shadow( 2px 2px 6px #000000ca);
+                width: 25rem;
+                filter: drop-shadow( 0.125rem 0.125rem 0.375rem #000000ca);
                 user-select: none;
             }
     
@@ -228,7 +228,7 @@
     
         .box-components {
             width: 100%;
-            height: calc(100vh - 250px);
+            height: calc(100vh - 15.625rem);
             display: flex;
             flex-direction: column;
             flex-wrap: nowrap;
@@ -241,12 +241,12 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: space-around;
-                height: 100px;
+                height: 6.25rem;
         
         
                 .box-error {
                     width: 100%;
-                    height: 50px;
+                    height: 3.125rem;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -256,8 +256,8 @@
                         text-align: center;
                         font-family: var(--font);
                         font-weight: 600;
-                        text-shadow: unset 1px 1px 2px #00000069;
-                        padding: 0 20px;
+                        text-shadow: unset 0.0625rem 0.0625rem 0.125rem #00000069;
+                        padding: 0 1.25rem;
                         font-size: 2em;
                     }
         
@@ -266,8 +266,8 @@
         
                 input[type="text"] {
                     border: none;
-                    height: 40px;
-                    border-radius: 5px;
+                    height: 2.5rem;
+                    border-radius: 0.3125rem;
                     text-align: center;
                     font-size: 2rem;
                     font-family: var(--font);
@@ -279,14 +279,14 @@
                 }
         
                 input[type="text"]:hover {
-                    outline: 2px solid #094080;
-                    box-shadow: 2px 2px 5px #000;
+                    outline: 0.125rem solid #094080;
+                    box-shadow: 0.125rem 0.125rem 0.3125rem #000;
         
                 }
 
                 input[type="text"]:focus-visible {
-                    outline: 2px solid #094080;
-                    box-shadow: 2px 2px 5px #000;
+                    outline: 0.125rem solid #094080;
+                    box-shadow: 0.125rem 0.125rem 0.3125rem #000;
         
                 }
         
@@ -296,7 +296,7 @@
         
             .container-level-selector{
                 width: 100%;
-                height: 50px;
+                height: 3.125rem;
          
         
                 .box-level{
@@ -310,21 +310,21 @@
         
                     label {
         
-                        width: 100px;
+                        width: 6.25rem;
                         display: flex;
                         flex-direction: column;
                         align-items: center;
-                        gap: 5px;
+                        gap: 0.3125rem;
                         font-family: var(--font);
                         font-size: 1.2rem;
                         font-weight: 600;
-                        text-shadow: 1px 1px 1.5px #000000ca;
+                        text-shadow: 0.0625rem 0.0625rem 0.0938rem #000000ca;
         
                         input[type="radio"] {
                             appearance: none;
-                            width: 20px;
-                            height: 20px;
-                            border: 2px solid #f1f1f1;
+                            width: 1.25rem;
+                            height: 1.25rem;
+                            border: 0.125rem solid #f1f1f1;
                             border-radius: 50%;
                             background-color: #984006c8;
                             cursor: pointer;
@@ -337,7 +337,7 @@
                             border: none;
                             background-color: #0088D0;
                             background-image: radial-gradient(circle at center,  #fff153d3 50%, transparent 55%);
-                            box-shadow: 2px 2px 1.5px #000000ca;
+                            box-shadow: 0.125rem 0.125rem 0.0938rem #000000ca;
                         }
         
                         input[type="radio"]:focus-visible {
@@ -355,19 +355,19 @@
                 flex-wrap: nowrap;
                 justify-content: space-around;
                 align-items: center;
-                height: 100px;
-                gap: 20px;
+                height: 6.25rem;
+                gap: 1.25rem;
     
                 .box-info {
-                    height: 50px;
+                    height: 3.125rem;
 
                     
     
                     .initial-info, .error-message{
                         font-family: var(--font);
-                        text-shadow: 1px 1px 2px #00000069;
+                        text-shadow: 0.0625rem 0.0625rem 0.125rem #00000069;
                         text-align: center;
-                        height: 80px;
+                        height: 5rem;
                         font-size: 2em;
                         
         
@@ -377,15 +377,15 @@
                 
         
                 .box-Button {
-                    box-shadow: 2px 2px 5px #000000ca;
+                    box-shadow: 0.125rem 0.125rem 0.3125rem #000000ca;
                     
                     .btn-start {
                         border: none;
-                        padding: 10px 30px;
-                        border-radius: 5px;
-                        box-shadow: 0px 2px 5px #000;
+                        padding: 0.625rem 1.875rem;
+                        border-radius: 0.3125rem;
+                        box-shadow: 0rem 0.125rem 0.3125rem #000;
                         transition: transform 0.1s ease;
-                        outline: 2px solid #000;
+                        outline: 0.125rem solid #000;
         
                         p {
                             font-family: var(--font);
@@ -395,7 +395,7 @@
                     }
         
                     .btn-start:active {
-                        transform: translateY(2px);
+                        transform: translateY(0.125rem);
                     }
         
                 }
